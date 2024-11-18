@@ -1,0 +1,15 @@
+{% extends 'blog/layout.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content%}
+
+    <h1>Мой Блог</h1>
+
+    <ul>
+    {% for post in posts %}
+        <li><a href="{% url 'detail' post.id %}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
